@@ -12,7 +12,6 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 /*
@@ -46,6 +45,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 			.tokenStore(tokenStore());
 		resources.tokenServices(defaultTokenServices());
 	}
+	
+	
+	
 
 /*	@Bean
 	public JdbcTokenStore tokenStore() {
