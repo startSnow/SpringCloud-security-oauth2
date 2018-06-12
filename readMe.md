@@ -7,4 +7,7 @@
 | springcloud-zuul      |    |   网关   |
 | springcloud-oauth2-auth-server        |     |   认证服务器    |
 | springcloud-resource-server       |   |   资源服务器    |
+
+
+2、增加单点登录功能
  	
