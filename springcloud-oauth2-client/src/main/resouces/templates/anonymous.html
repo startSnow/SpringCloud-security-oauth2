@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title></title>
+<meta charset="UTF-8"></meta>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}"
+	href="webjars/bootstrap/3.2.0/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">OAuth2 ClientB</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li><a th:href="@{/}" href="home.html"> Home </a></li>
+						<li>	<a th:if="${#authentication.name}==anonymousUser" th:href="@{/}">登录</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<h1 th:text="${title}">Title</h1>
+		<span th:text="|${#authentication.name},您好|">您好</span> <a
+			th:if="${#authentication.name}!=anonymousUser" th:href="logout">注销</a>
+		<a th:if="${#authentication.name}==anonymousUser" th:href="@{/}">登录</a>
+		<p>
+			Logged in as: <span th:text="${#httpServletRequest.remoteUser}"></span>
+		</p>
+	</div>
+</body>
+</html>

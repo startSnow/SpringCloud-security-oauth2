@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title></title>
+<meta charset="UTF-8"></meta>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}"
+	href="webjars/bootstrap/3.2.0/css/bootstrap.min.css" />
+	  <script th:src="@{/webjars/jquery/2.1.1/jquery.min.js}"></script>
+</head>
+
+<body>
+	<div class="container">
+	<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="#">OAuth2-Client</a>
+	</div>
+	<div>
+		<ul class="nav navbar-nav">
+<li><a th:href="@{/}" href="home.html"> Home </a></li>
+<li><a  onclick="loada('ui1')"> 系统B </a></li>
+					<li><a th:href="@{/logout}" href="logout"> Logout </a></li>
+						
+					
+		</ul>
+	</div>
+	</div>
+</nav>
+		<h1 th:text="${title}">Title</h1>
+			<span th:text="|${#authentication.name},您好|">您好</span>
+					<a th:if="${#authentication.name}!=null"  th:href="@{/logout}" href="logout">注销s</a>
+							<a th:if="${#authentication.name}==null" th:href="login.html">登录</a>
+							    <p>Logged in as: <span th:text="${#httpServletRequest.remoteUser}">demo</span></p>
+						
+	</div>
+</body>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+var token =  /*[[${session.SPRING_SECURITY_CONTEXT.authentication.details.tokenValue}]]*/ ;
+function loada(clientId){
+	alert(clientId);
+	window.location.href="http://localhost:9999/uaa/rediect?clientId="+clientId+"&token="+token;
+}
+   /*]]>*/
+</script>
+</html>

@@ -1,0 +1,42 @@
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.cloud: DEBUG
+    org.springframework.web: WARN
+    
+server:
+  port: 8080
+proxy:
+  auth:
+    routes:
+      customers: oauth2
+      stores: passthru
+      recommendations: none  
+spring:
+  aop:
+    proxy-target-class: true
+  
+zuul:  
+  routes:    
+    startpage:
+      path: /**
+      url: http://localhost:8081
+    resource:      
+      path: /resource/**
+      url: http://localhost:9001/resource
+    user:
+      path: /user/**
+      url: http://localhost:9999/uaa/user
+
+security:
+  oauth2:    
+    client:
+      accessTokenUri: http://localhost:9999/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
+      clientId: ui1
+      clientSecret: ui1-secret   
+    resource:
+      userInfoUri: http://localhost:9999/uaa/user
+      preferTokenInfo: false  
+  sessions: ALWAYS
