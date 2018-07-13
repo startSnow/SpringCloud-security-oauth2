@@ -3,8 +3,9 @@
 <head>
 <title></title>
 <meta charset="UTF-8"></meta>
-<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}"
-	href="webjars/bootstrap/3.2.0/css/bootstrap.min.css" />
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	rel="stylesheet"/>
 	  <script th:src="@{/webjars/jquery/2.1.1/jquery.min.js}"></script>
 </head>
 
@@ -39,7 +40,6 @@
 /*<![CDATA[*/
 var token =  /*[[${session.SPRING_SECURITY_CONTEXT.authentication.details.tokenValue}]]*/ ;
 function loada(clientId){
-	alert(clientId);
 	window.location.href="http://localhost:9999/uaa/rediect?clientId="+clientId+"&token="+token;
 }
    /*]]>*/
