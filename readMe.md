@@ -3,7 +3,8 @@
 
 | 项目名称      |  启动顺序  |  用途 |
 | --------   | -----:   | :----: |
-| springcloud-client     |    3   |   angularjs   |
+| springcloud-client     |    3   |   angularjs客户端模拟系统B ,Zuul代理   |
+|springcloud-oauth2-client     |    3   |   客户端模拟系统A   |
 | springcloud-zuul      |   4 |   网关   |
 | springcloud-oauth2-auth-server        |  1   |   认证服务器    |
 | springcloud-resource-server       |  2 |   资源服务器    |
