@@ -18,6 +18,7 @@
 	单点登录测试-》http://127.0.0.1:7777/ 点击企业登录
 	账号输入->admin admin
 	登陆成功->首页页面点击系统B即可单点至B系统
+
 4、密码模式
 
 时间不足，用命令行测试
@@ -31,3 +32,5 @@ curl -i -d "grant_type=password&username=admin&password=admin&scope=read" -u "cu
 ~~~
 https://blog.csdn.net/chao_1990/article/details/83782147
 ~~~
+=======
+6、当工程启动不了的时候，可能是上传的resouces的文件夹不是源文件夹了，需要手动变更一下。怎么控制上传文件夹的类型我忘记了好像是文件中该什么，如果有知道的同学给我留言多谢
