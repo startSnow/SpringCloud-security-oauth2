@@ -27,7 +27,7 @@ curl -i -d "grant_type=password&username=admin&password=admin&scope=read" -u "cu
 ~~~
 5、遗留
 5-1 Oauth2授权模式password单一账号并发问题，需要增加Redis 锁
- 
+  
 ~~~
 https://blog.csdn.net/chao_1990/article/details/83782147
 ~~~
