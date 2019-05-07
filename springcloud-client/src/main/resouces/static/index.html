@@ -17,21 +17,21 @@
 	<div ng-controller="navigation" class="container">
 		<ul class="nav nav-pills" role="tablist">
 			<li ng-class="{active:tab('home')}"><a href="#/">Home</a></li>
-			<li ng-show="authenticated"  ng-class="{active:tab('protected')}"><a
+			<li ng-show="authenticated" ng-class="{active:tab('protected')}"><a
 				href="#/protected">Protected</a></li>
+			<li ng-show="authenticated"><a href="" ng-click="sso()">Single
+					sign on</a></li>
 			<li ng-show="!authenticated"><a href="login">login</a></li>
 			<li ng-show="authenticated"><a href="" ng-click="logout()">logout</a></li>
 		</ul>
 
 		<p ng-show="authenticated">Logged in as: {{loggedInUser.name}}</p>
-		
+
 	</div>
 	<div ng-view class="container"></div>
-	<script
-		src="js/angular.min.js"
-		type="text/javascript"></script>
+	<script src="js/angular.min.js" type="text/javascript"></script>
 	<script src="js/angular-route.min.js" type="text/javascript"></script>
-	
+
 	<script src="js/app.js" type="text/javascript"></script>
 </body>
 </html>

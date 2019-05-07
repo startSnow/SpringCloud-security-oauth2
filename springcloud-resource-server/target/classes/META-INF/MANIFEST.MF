@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Implementation-Title: springcloud-resource-server
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: Admin
-Implementation-Vendor-Id: cn.com.taiji
+Implementation-Vendor-Id: com.example
 Build-Jdk: 1.8.0_162
 Implementation-URL: http://maven.apache.org
 Created-By: Maven Integration for Eclipse

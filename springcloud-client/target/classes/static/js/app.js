@@ -1,12 +1,13 @@
 //Angular module 
 angular.module('hello', [ 'ngRoute' ]).config(function($routeProvider, $httpProvider) {
-
 	$routeProvider.when('/', {
 		templateUrl : 'home.html',
 		controller : 'home'
 	}).when('/protected', {
 		templateUrl : 'protected.html',
 		controller : 'protected'
+	}).when('sso', {
+		controller : 'sso'
 	}).otherwise('/');
 
 	$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';	
@@ -41,7 +42,10 @@ angular.module('hello', [ 'ngRoute' ]).config(function($routeProvider, $httpProv
 			$rootScope.authenticated = false;
 		});
 	}
+	
+	
 })
+
 
 .controller('home', function($scope, $http) {
 	$http.get('/resource/demo').success(function(data) {
